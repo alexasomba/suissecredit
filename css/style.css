@@ -258,7 +258,7 @@ body .theme-button {
   border-radius: 2px;
   position: absolute;
   bottom: 0;
-  left:0;
+  left: 32vw;
 }
 #theme-main-banner .camera_caption h1 {
   color: white;
