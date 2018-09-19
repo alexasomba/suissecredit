@@ -596,7 +596,7 @@ body .theme-button {
 /*----------------------- Feature Banner --------------------*/
 .feature-banner {margin: 70px 0 0 0;}
 .feature-banner.bg-one {
-  background: url(../images/home/1.jpg) no-repeat center;
+  background: url(../images/home/banner-bg.jpeg) no-repeat center;
   background-size: cover;
   background-attachment: fixed;
 }
