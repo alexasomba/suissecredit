@@ -183,20 +183,20 @@ $(function() {
         zoom: 14,
         styles: mapStyle,
         scrollwheel: false,
-        center: new google.maps.LatLng(40.72, -74)
+        center: new google.maps.LatLng(6.4248047,3.4387573)
     });
 
     // Add a marker
     var marker = new google.maps.Marker({
         map: map,
-        position: new google.maps.LatLng(40.72, -74)
+        position: new google.maps.LatLng(6.4248047,3.4387573)
     });
 
     // Add a Snazzy Info Window to the marker
     var info = new SnazzyInfoWindow({
         marker: marker,
-        content: '<img src="images/logo/logo.png" alt="Logo">' +
-                 '<p>San Francisco, CA 560 Bush St &amp; 20th Ave, Apt <br>5 San Francisco, 230909</p>',
+        content: '<img src="images/logo/suisse logo.jpeg" alt="Logo" height="40px">' +
+                 '<p>11b Ligali Ayorinde Street, Off Ajose Adeogun Street, VI Lagos</p>',
         closeOnMapClick: false
     });
     info.open();
