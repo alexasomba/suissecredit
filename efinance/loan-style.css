@@ -24,9 +24,12 @@
 }
 .result {
     background-color: #423e95;
-    width: 100%;
+    width: 300px;
     height: 30vw;
     border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 /* box 1 text*/
@@ -34,7 +37,7 @@
     font-family: 'Poppins', sans-serif;
     font-size: 40px;
     font-weight: bold;
-    color: grey;
+    color: white;
 }
 .need {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -82,8 +85,8 @@ input[type=range] {
 
 /* */
 .amount-text {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 25px;
+    font-family: initial;
+    font-size: 23px;
     font-weight: bold;
     color: black;
 }
@@ -160,10 +163,13 @@ select {
     margin: 1vw auto;
 }
 .btn {
-    margin: 2vw auto;
-    width: 13vw;
-    height: 5vw;
+    margin: auto;
+    /* width: 13vw; */
+    align-self: center;
+    justify-content: center;
+    display: flex;
 }
+
 button {
     background-color: white;
     border-radius: 3px;
