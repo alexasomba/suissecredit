@@ -98,16 +98,16 @@ input[type=range] {
     left: 70%;
 }
 .how-long {
-    font-family: 'Courier New', Courier, monospace;
+    font-family: initial;
     font-size: 20px;
-    color: gray;
-    font-weight: 700;
+    color: #432E52;
+    font-weight: 500;
 }
 .interest-fees {
-    font-family: 'Courier New', Courier, monospace;
+    font-family: initial;
     font-size: 20px;
     font-weight: bold;
-    color: black;
+    color: #423e95;
 }
 
 .interest-value {
@@ -165,13 +165,12 @@ select {
     height: 5vw;
 }
 button {
-    background-color:white;
-    width: 13vw;
-    height: 5vw;
-    border-radius: 10px;
-    font-size: 2vw;
+    background-color: white;
+    border-radius: 3px;
+    font-size: 1rem;
     color: black;
     border: none;
+    padding: 8px;
 }
 .termsCondition {
         text-align: center;
