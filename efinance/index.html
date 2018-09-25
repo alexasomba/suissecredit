@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Loan Calculator </title>
+    <link rel="stylesheet" type="text/css" href="./loan-style.css" />
+</head>
+
+<body>
+    <!-- Parent-container -->
+    <div class="parent-container">
+        <div class="parent-div">
+            <!-- First Box-->
+            <div class="text">
+                <div>
+                    <div class="check"> Check loan status interest & <br /> installments</div>
+                    <div class="need"> How much do you need? </div>
+                </div>
+                <div class="amount-cover">
+                    <div class="amount-text"> Amount: <div id="loan-amount" class="amount-no"> N100000 </div>
+                    </div>
+                </div>
+                <!-- slider -->
+                <div class="slider-cover">
+                    <input type="range" class="slider" min="100000" max="2000000" value="100000" step="50000" onchange="calculateValue();"
+                        id="slider" />
+                </div>
+                <!-- How long do you need it for -->
+                <div class="loantime-cover">
+                    <div class="how-long"> How long do you need it for? </div>
+                    <div class="interest-cover">
+                        <div class="interest-fees"> Intrests & Fees: </div>
+                        <div class="interest-value" id="interest-amount"> </div>
+                    </div>
+                </div>
+                <!-- Pick the month -->
+                <div class="month-cover">
+                    <select id="select" onchange="calculateValue();">
+                        <option value="1"> 1 month</option>
+                        <option value="2"> 2 month</option>
+                        <option value="3"> 3 month</option>
+                        <option value="4"> 4 month</option>
+                        <option value="5"> 5 month</option>
+                        <option value="6"> 6 month</option>
+                        <option value="7"> 7 month</option>
+                        <option value="8"> 8 month</option>
+                        <option value="9"> 9 month</option>
+                    </select>
+                </div>
+
+            </div>
+
+            <!-- Second Box-->
+            <div class="result-cover">
+                <div class="result">
+                    <div class="one">
+                        <div class="t-amount"> Total Amount: </div>
+                        <div id="total" class="total-figure"> </div>
+                        <div class="line"> </div>
+                    </div>
+
+                    <div class="two">
+                        <div class="m-payment"> Monthly payment: </div>
+                        <div class="total-figure" id="halfTotal"> </div>
+                    </div>
+
+                    <div class="three">
+                        <div class="btn">
+                            <button>Apply Now </button>
+                        </div>
+                        <div class="termsCondition"> Terms and conditions Apply </div>
+                    </div>
+                </div>
+
+                <!-- End of Box-->
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+
+        function calculateValue() {
+            document.getElementById('loan-amount').step = "50000";
+            var sliderValue = document.getElementById('slider').value;
+            /* Show the slider value */
+            document.getElementById('loan-amount').innerHTML = ('N' + sliderValue);
+            var monthValue = document.getElementById('select').value;
+            /* Show month value */ /* Calculate interest 0.06) */
+            var monthCalc1 = sliderValue * 0.07;
+            var monthCalc2 = Math.round(monthCalc1 * monthValue);
+            document.getElementById('interest-amount').innerHTML = ('N' + monthCalc2);
+            /* Calculate result */
+            var first = parseInt(monthCalc2, 10);
+            var second = parseInt(sliderValue, 10);
+            var result = first + second;
+            var result = Math.round(result);
+            /* Show in total amount */
+            document.getElementById('total').innerHTML = ('N' + result);
+            /* calculate half month */
+            var halfResult = result / monthValue;
+            var halfResult = Math.round(halfResult);
+            document.getElementById('halfTotal').innerHTML = ('N' + halfResult);
+
+        }
+
+    </script>
+</body>
+
+</html>
