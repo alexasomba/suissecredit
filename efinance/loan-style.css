@@ -127,13 +127,17 @@ input[type=range] {
 
 
 select {
-    width: 10vw;
+    width: 150px;
     height: 4vw;
-    font-size: 1.5vw;
-    box-shadow: 0.3vw 0.3vw 1vw grey;
+    font-size: 1.3rem;
+    /* box-shadow: 0.3vw 0.3vw 1vw grey; */
     border-radius: 1vw;
     outline: none;
-    text-align-last:center;
+    text-align-last: center;
+    /* padding: 3px; */
+    border: 1px solid #435e95;
+    background: #423e95;
+    color: white;
 }
 
 .t-amount {
