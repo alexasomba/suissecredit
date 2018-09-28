@@ -253,123 +253,60 @@
 				Our Service
 			============================================== 
 			-->
-		<div class="our-service" style="margin-bottom: 120px;">
-			<div class="container">
-				<div class="parent-container">
-					<div class="parent-div">
-						<!-- First Box-->
-						<div class="text">
-							<div>
-								<div class="check"> Check loan status interest & installments</div>
-							</div>
-							<div class="amount-cover">
-								<div class="amount-text"> Amount: <div id="loan-amount" class="amount-no"> N100000 </div>
-								</div>
-							</div>
-							<!-- slider -->
-							<div class="slider-cover">
-								<div class="need"> How much do you need? </div>
-								<input type="range" class="slider" min="100000" max="2000000" value="100000" step="50000" onchange="calculateValue();"
-								 id="slider" />
-							</div>
-							<!-- How long do you need it for -->
-							<div class="loantime-cover">
-								<div class="how-long"> How long do you need it for? </div>
-								<div class="interest-cover">
-									<div class="interest-fees"> Interest Charges: </div>
-									<div class="interest-value" id="interest-amount"> </div>
-								</div>
-							</div>
-							<!-- Pick the month -->
-							<div class="month-cover">
-								<select id="select" onchange="calculateValue();">
-									<option value="1"> 1 month</option>
-									<option value="2"> 2 months</option>
-									<option value="3"> 3 months</option>
-									<option value="4"> 4 months</option>
-									<option value="5"> 5 months</option>
-									<option value="6"> 6 months</option>
-									<option value="7"> 7 months</option>
-									<option value="8"> 8 months</option>
-									<option value="9"> 9 months</option>
-								</select>
-							</div>
-
-						</div>
-
-						<!-- Second Box-->
-						<div class="result-cover">
-							<div class="result">
-								<div class="one">
-									<div class="t-amount"> Total Amount: </div>
-									<div id="total" class="total-figure"> </div>
-									<div class="line"> </div>
-								</div>
-
-								<div class="two">
-									<div class="m-payment"> Monthly payment: </div>
-									<div class="total-figure" id="halfTotal"> </div>
-								</div>
-
-								<div class="three">
-									<div class="btn">
-										<button><a class='button-one' href="loans.html">Apply Now</a> </button>
-									</div>
-								</div>
-							</div>
-
-							<!-- End of Box-->
-
-						</div>
-
+		<div class="parent-container">
+			<!-- Child-Container -->
+			<div class="child-container">
+				<!-- Child-Boxes-->
+				<div class="box1">
+					<span class="borrowText"> I would like to borrow: </span>
+					<span id="mediaQ">
+						<span class="currency">
+							<input type="number" class="borrowInput" id="borrowInput" onchange="moveSlider();" min="100000" max="2000000"
+							 maxlength="20" />
+						</span>
+					</span>
+					<!-- remove break tag later-->
+					<br /> <br />
+					<!-- Slider and Buttons -->
+					<div>
+						<button class="negative" id="negative" onclick="decrease();"> - </button>
+						<span class="centerSlider">
+							<input type="range" class="slider" min="100000" max="2000000" value="100000" onchange="moveTextfield();" id="sliderOne" />
+						</span>
+						<button class="positive" id="positive" onclick="increase();"> + </button>
 					</div>
-
 				</div>
-				<div class="theme-title text-center">
-					<h2>Always here to help when you need <br>quick accessible loans.</h2>
-					<p>We provide quick 2 hours disbursement turnaround time after submission of requirements.</p>
-				</div> <!-- /.theme-title -->
-				<div class="row" style="justify-content: center">
-					<div class="col-lg-3 col-6">
-						<div class="single-service border-new">
-							<div class="image-box"><img src="images/service/personal loans.jpeg" alt=""></div>
-							<div class="text">
-								<h4><a href="service-details.html">Personal Loans</a></h4>
-								<p>Your personal goals and our personal loans are always a perfect fit.</p>
-							</div> <!-- /.text -->
-						</div> <!-- /.single-service -->
-					</div> <!-- /.col- -->
-					<div class="col-lg-3 col-6">
-						<div class="single-service border-new">
-							<div class="image-box"><img src="images/service/sme loans.jpeg" alt=""></div>
-							<div class="text">
-								<h4><a href="service-details.html">SME loans</a></h4>
-								<p>We keep the juicy ideas flowing by ensuring you never lack the resources to reach your dreams</p>
-							</div> <!-- /.text -->
-						</div> <!-- /.single-service -->
-					</div> <!-- /.col- -->
-					<div class="col-lg-3 col-6">
-						<div class="single-service border-new">
-							<div class="image-box"><img src="images/service/Black-Family.jpg" alt=""></div>
-							<div class="text">
-								<h4><a href="service-details.html">Leasing Services</a></h4>
-								<p>Properties and Assets loans available on demand, no limits with us.</p>
-							</div> <!-- /.text -->
-						</div> <!-- /.single-service -->
+				<div class="box2">
+					<div class="box2b">
+						<div class="tp"> Total Payments </div>
+						<div id="totalPayments"> </div>
+						<div class="mp"> Monthly Payments </div>
+						<div id="monthlyPayments"> </div>
+						<div class="if"> Interest & Fees </div>
+						<div id="interestFees"> </div>
+						<div class="btn-parent">
+							<button class="btn"> Apply Now</button>
+						</div>
 					</div>
-					<!-- /.col- 
-					<div class="col-lg-3 col-6">
-						<div class="single-service">
-							<div class="image-box"><img src="images/service/4.jpg" alt=""></div>
-							<div class="text">
-								<h4><a href="service-details.html">Software Research</a></h4>
-								<p>Lorem ipsum dolor sit amet, cons ectetur elit. Vestibulum nec psum dolor sit.</p>
-							</div> /.text 
-						</div> /.single-service 
-					</div>  /.col- -->
-				</div> <!-- /.row -->
-			</div> <!-- /.container -->
-		</div> <!-- /.our-service -->
+				</div>
+				<div class="box3">
+					<span class="monthText"> And pay it back over: </span>
+					<span class="moveMonth">
+						<input type="number" class="borrowInput" id="inputMonth" onchange="moveMonthSlider();" />
+						<!-- remove break tag later-->
+						<span class="mmonth"> Months </span>
+					</span>
+					<br /> <br />
+					<!-- Slider and Buttons -->
+					<div>
+						<button class="negative" id="negativeMonth" onclick="reduceMonth();"> - </button>
+						<button class="positive" id="positiveMonth" onclick="increaseMonth();"> + </button>
+
+						<input type="range" min="1" max="60" value="1" id="sliderTwo" onchange="monthSlide();" />
+					</div>
+				</div>
+			</div>
+		</div>
 
 
 
@@ -852,30 +789,160 @@
 			}
 		</script>
 		<script>
-			function calculateValue() {
-				document.getElementById('loan-amount').step = "50000";
-				var sliderValue = document.getElementById('slider').value;
-				/* Show the slider value */
-				document.getElementById('loan-amount').innerHTML = ('N' + sliderValue);
-				var monthValue = document.getElementById('select').value;
-				/* Show month value */ /* Calculate interest 0.06) */
-				var monthCalc1 = sliderValue * 0.07;
-				var monthCalc2 = Math.round(monthCalc1 * monthValue);
-				document.getElementById('interest-amount').innerHTML = ('N' + monthCalc2);
-				/* Calculate result */
-				var first = parseInt(monthCalc2, 10);
-				var second = parseInt(sliderValue, 10);
-				var result = first + second;
-				var result = Math.round(result);
-				/* Show in total amount */
-				document.getElementById('total').innerHTML = ('N' + result);
-				/* calculate half month */
-				var halfResult = result / monthValue;
-				var halfResult = Math.round(halfResult);
-				document.getElementById('halfTotal').innerHTML = ('N' + halfResult);
+			function run() {
+				var ss = document.getElementById('borrowInput').value = "100000";
+				var mm = document.getElementById('inputMonth').value = "1";
+			}
+			function increase() {
+				document.getElementById('sliderOne').step = "50000";
+				document.getElementById('borrowInput').step = "50000";
 
+				var oldSave = document.getElementById('borrowInput').value;
+				var save = parseInt(oldSave, 10);
+				/* Don't increase if value is greater than 2 million */
+				if (save < 2000000) {
+					save = save + 50000;
+					document.getElementById('borrowInput').value = (save);
+					moveSlider();
+				}
+				calcLoan();
 			}
 
+			function decrease() {
+				document.getElementById('sliderOne').step = "50000";
+				document.getElementById('borrowInput').step = "50000";
+
+				var oldSave = document.getElementById('borrowInput').value;
+				var save = parseInt(oldSave, 10);
+    /* If its less than 100k don't reduce*/ if (save > 100000) {
+					save = save - 50000;
+					document.getElementById('borrowInput').value = (save);
+					moveSlider();
+				}
+				calcLoan();
+			}
+
+			function moveTextfield() {
+				document.getElementById('sliderOne').step = "50000";
+				document.getElementById('borrowInput').step = "50000";
+
+				/* Get slider value and put it in the input value*/
+				var sliderValue = document.getElementById('sliderOne').value;
+
+				if (sliderValue > 100000 && sliderValue < 2000000) {
+					var inputValue = document.getElementById('borrowInput').value = (sliderValue);
+
+					/* Get input value and put it in slider value */
+					inputValue = document.getElementById('borrowInput').value;
+					sliderValue = document.getElementById('sliderOne').value = (inputValue);
+					calcLoan();
+				}
+				/* When button clicked */
+			}
+
+			function moveSlider() {
+				document.getElementById('sliderOne').step = "50000";
+				document.getElementById('borrowInput').step = "50000";
+
+				/* */
+				var inputValue = document.getElementById('borrowInput').value;
+				if (inputValue > 100000 && inputValue < 2000000) {
+					var sliderValue = document.getElementById('sliderOne').value = (inputValue);
+					calcLoan();
+				}
+			}
+
+			/* Calculate Month */
+			/* When you slide on this the value in the text area will change */
+			function monthSlide() {
+				document.getElementById('sliderTwo').step = "1";
+				document.getElementById('inputMonth').step = "1";
+
+				/* Get value and update the text area */
+				var save = document.getElementById('sliderTwo').value;
+				var show = document.getElementById('inputMonth').value = (save);
+				var shaw = document.getElementById('inputMonth').value = (save);
+				calcLoan();
+			}
+
+			function moveMonthSlider() {
+				document.getElementById('sliderTwo').step = "1";
+				document.getElementById('inputMonth').step = "1";
+
+				var save = document.getElementById('inputMonth').value;
+				var show = document.getElementById('sliderTwo').value = (save);
+				calcLoan();
+			}
+
+			function reduceMonth() {
+				document.getElementById('sliderTwo').step = "1";
+				document.getElementById('inputMonth').step = "1";
+
+				var oldSave = document.getElementById('inputMonth').value;
+				var save = parseInt(oldSave, 10);
+				/* Don't reduce if value is lesser than  1 month */
+				if (save > 1) {
+					save = save - 1;
+					document.getElementById('inputMonth').value = (save);
+
+					/* move slider on increase*/
+					moveMonthSlider();
+				}
+				calcLoan();
+			}
+
+			function increaseMonth() {
+				document.getElementById('sliderTwo').step = "1";
+				document.getElementById('inputMonth').step = "1";
+
+				var oldSave = document.getElementById('inputMonth').value;
+				var save = parseInt(oldSave, 10);
+				/* Don't reduce if value is lesser than  1 month */
+				if (save < 60) {
+					save = save + 1;
+					document.getElementById('inputMonth').value = (save);
+					/* moveSlider */
+					moveMonthSlider();
+				}
+				/* */
+				calcLoan();
+			}
+
+			/* Calculate our value  */
+			function calcLoan() {
+
+				/* show total 7 percent */
+				/* Input * (no of month(inputMonth) * 7/100 */
+				var inputResultValue = parseInt(document.getElementById('borrowInput').value, 10);
+				var monthResultValue = parseInt(document.getElementById('inputMonth').value, 10);
+				/* 7% calculation */
+				if (inputResultValue && monthResultValue) {
+					var sevenPercent = monthResultValue * 0.07;
+					/* 10% calculation) */
+					var tenPercent = monthResultValue * 0.10;
+					/* */
+					var feeCharges1 = sevenPercent * inputResultValue;
+					var feeCharges2 = tenPercent * inputResultValue;
+
+					/* Rounding fee charges */
+					feeCharges1 = Math.round(feeCharges1);
+					feeCharges2 = Math.round(feeCharges2);
+
+					/* show the 7% range */
+					document.getElementById('interestFees').innerHTML = ('&#8358;' + feeCharges1 + ' - ' + '&#8358;' + feeCharges2);
+
+					/* GET THE TOTAL AMOUNT OF LOAN */
+					var totalResult1 = inputResultValue + feeCharges1;
+					var totalResult2 = inputResultValue + feeCharges2;
+					/* Half fee */
+					var halfTotal1 = (totalResult1 / 2);
+					var halfTotal2 = (totalResult2 / 2);
+					/* show the total repayment values */
+					document.getElementById('totalPayments').innerHTML = ('&#8358;' + totalResult1 + ' - ' + '&#8358;' + totalResult2);
+					document.getElementById('monthlyPayments').innerHTML = ('&#8358;' + halfTotal1 + ' - ' + '&#8358;' + halfTotal2);
+				}
+
+			}
 		</script>
 	</div> <!-- /.main-page-wrapper -->
 </body>
