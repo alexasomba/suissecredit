@@ -258,22 +258,23 @@
 			<div class="child-container">
 				<!-- Child-Boxes-->
 				<div class="box1">
-					<span class="borrowText"> I would like to borrow: </span>
-					<span id="mediaQ">
-						<span class="currency">
-							<input type="number" class="borrowInput" id="borrowInput" onchange="moveSlider();" min="100000" max="2000000"
-							 maxlength="20" />
+					<div class="months-info">
+						<span class="borrowText"> I would like to borrow: </span>
+						<span id="mediaQ">
+							<span class="currency">
+								<input type="number" class="borrowInput" id="borrowInput" onchange="moveSlider();" min="100000" max="2000000"
+								 maxlength="20" />
+							</span>
 						</span>
-					</span>
-					<!-- remove break tag later-->
-					<br /> <br />
-					<!-- Slider and Buttons -->
-					<div>
-						<button class="negative" id="negative" onclick="decrease();"> - </button>
-						<span class="centerSlider">
-							<input type="range" class="slider" min="100000" max="2000000" value="100000" onchange="moveTextfield();" id="sliderOne" />
-						</span>
-						<button class="positive" id="positive" onclick="increase();"> + </button>
+					</div>
+
+					<div class="month-slider">
+						<div class="slide-button-changer">
+							<button class="negative" id="negative" onclick="decrease();"> - </button>
+							<button class="positive" id="positive" onclick="increase();"> + </button>
+						</div>
+						<input type="range" class="input-slider" min="100000" max="2000000" value="100000" onchange="moveTextfield();" id="sliderOne" />
+
 					</div>
 				</div>
 				<div class="box2">
@@ -290,19 +291,22 @@
 					</div>
 				</div>
 				<div class="box3">
-					<span class="monthText"> And pay it back over: </span>
-					<span class="moveMonth">
-						<input type="number" class="borrowInput" id="inputMonth" onchange="moveMonthSlider();" />
-						<!-- remove break tag later-->
-						<span class="mmonth"> Months </span>
-					</span>
-					<br /> <br />
-					<!-- Slider and Buttons -->
-					<div>
-						<button class="negative" id="negativeMonth" onclick="reduceMonth();"> - </button>
-						<button class="positive" id="positiveMonth" onclick="increaseMonth();"> + </button>
+					<div class="months-info">
+						<span class="monthText"> And pay it back over: </span>
+						<span class="moveMonth">
+							<input type="number" class="borrowInput input-text" id="inputMonth" onchange="moveMonthSlider();" />
+							<!-- remove break tag later-->
+							<span class="mmonth"> Months </span>
+						</span>
+					</div>
 
-						<input type="range" min="1" max="60" value="1" id="sliderTwo" onchange="monthSlide();" />
+					<!-- Slider and Buttons -->
+					<div class="month-slider">
+						<div class="slide-button-changer">
+							<button class="negative" id="negativeMonth" onclick="reduceMonth();"> -</button>
+							<button class="positive" id="positiveMonth" onclick="increaseMonth();"> + </button>
+						</div>
+						<input type="range" min="1" max="60" value="1" id="sliderTwo" class="input-slider" onchange="monthSlide();" />
 					</div>
 				</div>
 			</div>
@@ -773,21 +777,7 @@
 		<!-- Theme js -->
 		<script src="js/theme.js"></script>
 
-		<script>
-			class LoanCalc {
-				constructor() {
-					this.submitButton = document.getElementById('submit-loan')
-					testing()
-				}
-				testing() {
-					submitButton.addEventListener('click', function (event) {
-						event.preventDefault()
-						return alert('this worked')
-					})
-				}
 
-			}
-		</script>
 		<script>
 			function run() {
 				var ss = document.getElementById('borrowInput').value = "100000";
@@ -935,11 +925,11 @@
 					var totalResult1 = inputResultValue + feeCharges1;
 					var totalResult2 = inputResultValue + feeCharges2;
 					/* Half fee */
-					var halfTotal1 = (totalResult1 / 2);
-					var halfTotal2 = (totalResult2 / 2);
+					var monthlyPayment1 = Math.round(totalResult1 / monthResultValue);
+					var monthlyPayment2 = Math.round(totalResult2 / monthResultValue);
 					/* show the total repayment values */
 					document.getElementById('totalPayments').innerHTML = ('&#8358;' + totalResult1 + ' - ' + '&#8358;' + totalResult2);
-					document.getElementById('monthlyPayments').innerHTML = ('&#8358;' + halfTotal1 + ' - ' + '&#8358;' + halfTotal2);
+					document.getElementById('monthlyPayments').innerHTML = ('&#8358;' + monthlyPayment1 + ' - ' + '&#8358;' + monthlyPayment2);
 				}
 
 			}
